@@ -1,16 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+import VaccineForm from './components/VaccineForm';
+import Patients from './components/Patients';
 
 function App()
 {
 	return (
-		<div>
-			<header>
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-			</header>
-		</div>
+		<Root>
+			<VaccineForm />
+			<Patients />
+		</Root>
 	);
 }
+
+const Root = styled.div`
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+`;
 
 export default App;

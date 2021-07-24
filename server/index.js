@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+import patientRoutes from "./routes/patients.js";
+
 const app = express();
 
 app.use(express.json({ limit: "30mb", extended: true }));
@@ -11,6 +13,9 @@ app.use(express.urlencoded({
 }));
 
 app.use(cors());
+
+
+app.use("/patients", patientRoutes);
 
 
 const CONNECTION_STRING = "mongodb://localhost:27017/jabbed";
