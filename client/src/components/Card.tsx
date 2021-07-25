@@ -4,6 +4,7 @@ import styled from 'styled-components';
 type PropsType = {
 	maxWidth?: string,
 	children?: React.ReactNode,
+	style?: React.CSSProperties,
 }
 
 function Card(props: PropsType)
@@ -21,8 +22,8 @@ const Main = styled.div`
 	color: #333;
 	background: #fff;
 	width: 100%;
-	padding: 2em;
-	margin: 2em;
+	padding: 2rem;
+	margin: 2rem;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
 	max-width: ${(props: PropsType) => props.maxWidth};
 `;

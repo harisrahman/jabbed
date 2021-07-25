@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components';
 import { PatientType } from '../Types';
+import { usePatients } from '../contexts/PatientsContext';
 import Patient from './Patient';
+import { fetchPatients } from '../api';
 
 export default function Patients()
 {
-	const [patients, setPatients] = useState<PatientType[]>([]);
-
+	const { patients, setPatients } = usePatients();
 
 	useEffect(() =>
 	{
-
-		fetch('http://localhost:5000/patients')
-			.then((res) => res.json())
+		fetchPatients()
 			.then((patients: PatientType[]) =>
 			{
-				// console.log(patients);
-
 				setPatients(patients);
 			})
 			.catch((error) =>
@@ -24,9 +22,14 @@ export default function Patients()
 			})
 	}, [])
 
+	const editHandler = (patient: PatientType) =>
+	{
+		console.log("edit");
+	}
+
 
 	return (
-		<div>
+		<Grid>
 			{
 				patients.map((patient: PatientType, index: number) =>
 				{
@@ -36,6 +39,12 @@ export default function Patients()
 
 				})
 			}
-		</div>
+		</Grid>
 	)
 }
+
+const Grid = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+`;

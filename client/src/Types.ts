@@ -1,7 +1,9 @@
 export type PatientType = {
 	name: string,
 	email: string,
-	phone: string
+	phone: string,
+	_id?: string,
+	createdAt?: string,
 };
 
 export type PatientForm = PatientType & { errors: (keyof PatientType)[] }
@@ -27,3 +29,15 @@ export type themeColorType = {
 export type themeColorKeyType = keyof themeColorType;
 
 export type themeType = { color: themeColorType };
+
+export interface PatientsContextType
+{
+	patients: PatientType[],
+	setPatients: (prop: PatientType[]) => void
+}
+
+export interface VaccineFormContextType
+{
+	vaccineForm: PatientForm,
+	setVaccineForm: (form: PatientForm) => void
+}
