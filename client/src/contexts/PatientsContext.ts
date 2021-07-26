@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
-import { PatientType, PatientsContextType } from '../Types';
+import { PatientsContextType } from '../Types';
 
 export const PatientsContext = createContext<PatientsContextType>({
 	patients: [],
-	setPatients: patients => console.warn('no patient yet')
+	setPatients: patients => console.warn('function not implemented')
 });
 
 export const usePatients = (): PatientsContextType => useContext(PatientsContext);

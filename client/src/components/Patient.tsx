@@ -6,7 +6,7 @@ import Button from './Button';
 import { PatientType } from '../Types';
 import { deletePatient } from '../api';
 import { usePatients } from '../contexts/PatientsContext';
-import { intialVaccineFormValues, useVaccineForm } from '../contexts/VaccineFormContext';
+import { useVaccineForm } from '../contexts/VaccineFormContext';
 
 type PropsType = PatientType & {
 	key?: number
@@ -15,7 +15,7 @@ type PropsType = PatientType & {
 export default function Patient({ _id, name, email, phone, createdAt }: PropsType)
 {
 	const { patients, setPatients } = usePatients();
-	const { vaccineForm, setVaccineForm } = useVaccineForm();
+	const { setVaccineForm } = useVaccineForm();
 
 	const editHandler = (e: React.MouseEvent<HTMLButtonElement>) =>
 	{

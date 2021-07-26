@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components';
 import { PatientType } from '../Types';
 import { usePatients } from '../contexts/PatientsContext';
@@ -20,13 +20,7 @@ export default function Patients()
 			{
 				console.log(error);
 			})
-	}, [])
-
-	const editHandler = (patient: PatientType) =>
-	{
-		console.log("edit");
-	}
-
+	}, [setPatients])
 
 	return (
 		<Grid>
@@ -46,5 +40,4 @@ export default function Patients()
 const Grid = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 `;
