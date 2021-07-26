@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { PatientType } from "../Types";
 
 const url = 'http://localhost:5000/patients';
