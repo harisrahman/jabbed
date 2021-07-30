@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PatientType, PatientForm } from '../Types';
 import { isValidEmail, hasOnlyNumbers } from '../helpers';
 
-type PropsType = {
+export type PropsType = {
 	title: string,
 	name: keyof PatientType,
 	type?: string,

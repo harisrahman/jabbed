@@ -21,8 +21,6 @@ function App()
 						<Patients />
 					</div>
 				</VaccineFormContext.Provider>
-
-
 			</Root>
 		</PatientsContext.Provider>
 	);

@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Card from '../Card';
 
 it('renders without crashing', () =>
 {
 	const div = document.createElement('div');
-	ReactDOM.render(<App />, div);
-});
+	const card = ReactDOM.render(<Card>Text</Card>, div);
 
-it('renders registered patients heading', () =>
-{
-	render(<App />);
-	expect(screen.getByText('Registered Patients')).toBeInTheDocument();
+	// expect(card)
 });

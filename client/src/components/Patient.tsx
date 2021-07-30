@@ -8,7 +8,7 @@ import { deletePatient } from '../api';
 import { usePatients } from '../contexts/PatientsContext';
 import { useVaccineForm } from '../contexts/VaccineFormContext';
 
-type PropsType = PatientType & {
+export type PropsType = PatientType & {
 	key?: number
 };
 

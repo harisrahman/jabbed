@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { themeColorKeyType } from '../Types';
 import theme from '../variables/theme';
 
-type PropsType = {
+export type PropsType = {
 	type: "button" | "submit" | "reset",
 	color: themeColorKeyType,
 	style?: React.CSSProperties,
